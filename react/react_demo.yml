@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactdemo
+  labels:
+    app: react
+    region: in
+spec:
+  replicas: 1
+  selector:
+    app: react
+  template:
+    metadata:
+      name: reactdemo
+      labels:
+        app: react
+    spec:
+      containers:
+        - name: reactdemo
+          image: moqaddas/reactdemo:latest
+          ports:
+            - protocol: TCP
+              port: 80
+              targetPort: 80
