@@ -8,10 +8,10 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: react
+    matchLabels:
+      app: react
   template:
     metadata:
-      name: reactdemo
       labels:
         app: react
     spec:
@@ -20,5 +20,4 @@ spec:
           image: moqaddas/reactdemo:latest
           ports:
             - protocol: TCP
-              port: 80
-              targetPort: 80
+              containerPort: 80
